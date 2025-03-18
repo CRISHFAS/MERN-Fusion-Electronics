@@ -57,7 +57,7 @@ const Footer = () => {
             </Typography>
             <Typography variant="body2">
               Mantenedor de proyecto:{' '}
-              <Link href="https://github.com" color="inherit" sx={{ textDecoration: 'underline', '&:hover': { color: '#f50057' } }}>
+              <Link href="https://github.com/CRISHFAS" color="inherit" sx={{ textDecoration: 'underline', '&:hover': { color: '#f50057' } }}>
                 Cristian Farias Martin
               </Link>
             </Typography>

@@ -29,8 +29,6 @@ Este proyecto es una demostración de la creación de una aplicación de comerci
 
 La aplicación está implementada en vivo en Vercel. Puede acceder a ella en la siguiente URL: [Fusion Electronics](https://fusion-ecommerce-app.vercel.app).
 
-El servidor backend está implementado en Render y se puede acceder a él en la siguiente URL: [API de Fusion Electronics](https://mern-stack-ecommerce-app-h5wb.onrender.com/).
-
 > **Nota**: El servidor backend puede tardar unos segundos en reactivarse si ha estado inactivo durante un tiempo. Para su información, está alojado en la versión gratuita de Render, con solo 0.1 CPU y 512 MB de memoria, por lo que puede tardar un poco más en responder a las solicitudes, especialmente después de periodos de inactividad.
 
 ## Características
@@ -154,8 +152,8 @@ Antes de ejecutar este proyecto, asegúrese de tener instalado lo siguiente:
 1. Clonar el repositorio:
 
    ```bash
-   git clone https://github.com/hoangsonww/MERN-Stack-Ecommerce-App.git
-   cd MERN-Stack-Ecommerce-App  # Arregla la ruta si es necesario
+   git clone https://github.com/CRISHFAS/MERN-Fusion-Electronics
+   cd MERN-Fusion-Electronics  # Arregla la ruta si es necesario
    ```
 
 2. Instalar las dependencias del proyecto:
