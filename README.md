@@ -27,7 +27,7 @@ Este proyecto es una demostración de la creación de una aplicación de comerci
 
 ## Implementación en vivo
 
-La aplicación está implementada en vivo en Vercel. Puede acceder a ella en la siguiente URL: [Fusion Electronics](https://fusion-ecommerce-app.vercel.app).
+La aplicación está implementada en vivo en Vercel. Puede acceder a ella en la siguiente URL: [Fusion Electronics](https://mern-fusion-electronics.vercel.app/).
 
 > **Nota**: El servidor backend puede tardar unos segundos en reactivarse si ha estado inactivo durante un tiempo. Para su información, está alojado en la versión gratuita de Render, con solo 0.1 CPU y 512 MB de memoria, por lo que puede tardar un poco más en responder a las solicitudes, especialmente después de periodos de inactividad.
 
