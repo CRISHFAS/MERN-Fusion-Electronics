@@ -12,25 +12,23 @@ function NavigationBar({ cartItemCount }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [searchQuery, setSearchQuery] = React.useState('');
   const [searchResults, setSearchResults] = React.useState([]);
-  const [loading, setLoading] = React.useState(false); // Loading state for search
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false); // State to track login status
+  const [loading, setLoading] = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const searchBarRef = React.useRef(null);
-  const searchResultsRef = React.useRef(null); // To detect clicks outside search results
+  const searchResultsRef = React.useRef(null);
   const open = Boolean(anchorEl);
   const location = useLocation();
   const navigate = useNavigate();
   const isMobile = useMediaQuery('(max-width:900px)');
 
-  // Check if user is logged in by looking for token in localStorage
   React.useEffect(() => {
     const checkToken = () => {
       const token = localStorage.getItem('MERNEcommerceToken');
-      setIsLoggedIn(!!token); // Set loggedIn state based on token presence
+      setIsLoggedIn(!!token);
     };
-    checkToken(); // Initial check
-    const interval = setInterval(checkToken, 2000); // Check every 2 seconds
-
-    return () => clearInterval(interval); // Cleanup interval on component unmount
+    checkToken();
+    const interval = setInterval(checkToken, 2000);
+    return () => clearInterval(interval);
   }, []);
 
   const handleClick = event => {
@@ -43,7 +41,7 @@ function NavigationBar({ cartItemCount }) {
 
   const handleSearchChange = event => {
     setSearchQuery(event.target.value);
-    debouncedSearch(event.target.value); // Trigger the debounced search
+    debouncedSearch(event.target.value);
   };
 
   const handleSearchResultClick = () => {
@@ -51,20 +49,20 @@ function NavigationBar({ cartItemCount }) {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('MERNEcommerceToken'); // Remove token from localStorage
+    localStorage.removeItem('MERNEcommerceToken');
     setIsLoggedIn(false);
-    navigate('/'); // Redirect to homepage after logout
+    navigate('/');
   };
 
-  // Debounced function to prevent triggering the search too often
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedSearch = React.useCallback(
     debounce(async query => {
       if (query.trim() === '') {
-        setSearchResults([]); // Clear search results if the query is empty
+        setSearchResults([]);
         setLoading(false);
         return;
       }
-      setLoading(true); // Set loading to true when search is triggered
+      setLoading(true);
       try {
         const response = await axios.get(`https://mern-stack-ecommerce-app-h5wb.onrender.com/api/search?q=${query}`);
         setSearchResults(response.data);
@@ -72,29 +70,27 @@ function NavigationBar({ cartItemCount }) {
         console.error('Error fetching search results:', error);
         setSearchResults([]);
       } finally {
-        setLoading(false); // Stop loading when the API call finishes
+        setLoading(false);
       }
-    }, 300), // 300ms debounce delay
-    []
+    }, 300),
+    [setLoading, setSearchResults]
   );
 
-  // Event listener to hide search results if clicking outside search bar or results
   React.useEffect(() => {
     const handleClickOutside = event => {
-      // Check if click is outside search bar and search results
       if (
         searchBarRef.current &&
         !searchBarRef.current.contains(event.target) &&
         searchResultsRef.current &&
         !searchResultsRef.current.contains(event.target)
       ) {
-        setSearchResults([]); // Hide search results on outside click
+        setSearchResults([]);
       }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside); // Cleanup listener on unmount
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
@@ -143,13 +139,13 @@ function NavigationBar({ cartItemCount }) {
             </IconButton>
             <Menu id="mobile-menu" anchorEl={anchorEl} open={open} onClose={handleClose}>
               <MenuItem onClick={handleClose} component={Link} to="/">
-                Home
+                Hogar
               </MenuItem>
               <MenuItem onClick={handleClose} component={Link} to="/shop">
                 Shop
               </MenuItem>
               <MenuItem onClick={handleClose} component={Link} to="/cart">
-                Cart
+                Carro
               </MenuItem>
             </Menu>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -174,7 +170,6 @@ function NavigationBar({ cartItemCount }) {
                 onChange={handleSearchChange}
                 style={{ width: '100%' }}
               />
-              {/* Display loading spinner if search is in progress */}
               {loading && (
                 <CircularProgress
                   size={20}
@@ -192,7 +187,7 @@ function NavigationBar({ cartItemCount }) {
               className={location.pathname === '/' ? 'active' : ''}
               sx={{ fontSize: '1rem', marginLeft: '1rem', marginRight: '0.5rem' }}
             >
-              Home
+              Hogar
             </Button>
             <Button
               color="inherit"
@@ -203,24 +198,20 @@ function NavigationBar({ cartItemCount }) {
             >
               Shop
             </Button>
-
-            {/* Login/Logout and Register */}
             {isLoggedIn ? (
               <Button onClick={handleLogout} sx={{ color: 'red', marginLeft: '0.5rem', marginRight: '0.5rem' }}>
-                Logout
+                Cerrar sesión
               </Button>
             ) : (
               <>
                 <Button color="inherit" component={Link} to="/login" sx={{ fontSize: '1rem', marginLeft: '0.5rem', marginRight: '0.5rem' }}>
-                  Login
+                  Acceso
                 </Button>
               </>
             )}
             <Button color="inherit" component={Link} to="/register" sx={{ fontSize: '1rem', marginLeft: '0.5rem' }}>
-              Register
+              Registro
             </Button>
-
-            {/* Cart Icon */}
             <IconButton color="inherit" component={Link} to="/cart" sx={{ marginLeft: '0.5rem' }}>
               <Badge badgeContent={cartItemCount} color="secondary">
                 <ShoppingCartIcon />
@@ -229,10 +220,9 @@ function NavigationBar({ cartItemCount }) {
           </>
         )}
       </Toolbar>
-
       {searchResults.length > 0 && searchBarRef.current && (
         <Box
-          ref={searchResultsRef} // Reference for detecting clicks outside the search results
+          ref={searchResultsRef}
           sx={{
             position: 'absolute',
             top: searchBarRef.current.getBoundingClientRect().bottom + 'px',
@@ -241,7 +231,7 @@ function NavigationBar({ cartItemCount }) {
             backgroundColor: 'white',
             borderRadius: '4px',
             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-            width: '300px', // Specify a custom width, no need to match the search bar
+            width: '300px',
           }}
         >
           <SearchResults results={searchResults} onResultClick={handleSearchResultClick} setSearchResults={setSearchResults} />

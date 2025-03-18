@@ -70,9 +70,9 @@ function Shop({ products, addToCart, loading }) {
       </Typography>
 
       <FormControl fullWidth sx={{ mb: 3 }}>
-        <InputLabel id="category-filter-label">Filter by Category</InputLabel>
+        <InputLabel id="category-filter-label">Filtrar por Categoria</InputLabel>
         <Select labelId="category-filter-label" id="category-filter" value={categoryFilter} label="Filter by Category" onChange={handleCategoryChange}>
-          <MenuItem value="all">All Categories</MenuItem>
+          <MenuItem value="all">Todas las categorías</MenuItem>
           {uniqueCategories.map(category => (
             <MenuItem key={category} value={category}>
               {category}

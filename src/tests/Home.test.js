@@ -90,13 +90,10 @@ describe('Home Component', () => {
 
     const shopNowButton = screen.getByRole('button', { name: /Shop Now/i });
 
-    // Check if the button is in the document
-    expect(shopNowButton).toBeInTheDocument();
-
-    // Simulate click to test navigation or any side effects
+    // Simula un clic en el botón (si es necesario para la prueba)
     userEvent.click(shopNowButton);
 
-    // Check for correct href attribute
-    expect(shopNowButton.closest('a')).toHaveAttribute('href', '/shop');
+    // Verifica el comportamiento esperado después del clic
+    expect(window.location.href).toContain('/shop');
   });
 });

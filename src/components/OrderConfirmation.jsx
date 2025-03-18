@@ -14,13 +14,13 @@ function OrderConfirmation() {
     <Box sx={{ textAlign: 'center', mt: 4 }}>
       <CheckCircleOutlineIcon sx={{ fontSize: 100, color: 'green', mb: 2 }} />
       <Typography variant="h4" gutterBottom>
-        Order Successful!
+        Orden exitoso!
       </Typography>
       <Typography variant="body1" paragraph>
-        Thank you for your purchase. Your order is being processed.
+        Gracias por su compra. Su pedido está siendo procesado.
       </Typography>
       <Button variant="contained" onClick={handleContinueShopping}>
-        Continue Shopping
+        Continuar comprando
       </Button>
     </Box>
   );

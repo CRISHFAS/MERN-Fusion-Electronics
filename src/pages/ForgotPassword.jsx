@@ -20,7 +20,7 @@ function ForgotPassword() {
       // If successful, navigate to reset password page
       navigate('/reset-password');
     } catch (err) {
-      setError(err.response?.data?.msg || 'Failed to verify email');
+      setError(err.response?.data?.msg || 'No se pudo verificar el correo electrónico');
     } finally {
       setLoading(false);
     }
@@ -30,7 +30,7 @@ function ForgotPassword() {
     <Container maxWidth="sm" sx={{ mt: 12, mb: 12 }}>
       <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
         <Typography variant="h4" align="center" gutterBottom>
-          Forgot Password
+          Has olvidado tu contraseña
         </Typography>
 
         {error && (
@@ -56,7 +56,7 @@ function ForgotPassword() {
               <CircularProgress />
             ) : (
               <Button type="submit" variant="contained" size="large" fullWidth>
-                Verify Email
+                Verificar correo electrónico
               </Button>
             )}
           </Box>

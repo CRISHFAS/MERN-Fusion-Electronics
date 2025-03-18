@@ -19,7 +19,7 @@ function Register() {
     setError(null);
 
     if (password !== confirmPassword) {
-      setError('Passwords do not match');
+      setError('Las contraseñas no coinciden');
       setLoading(false);
       return;
     }
@@ -54,7 +54,7 @@ function Register() {
     <Container maxWidth="sm" sx={{ mt: 4 }}>
       <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
         <Typography variant="h4" align="center" gutterBottom>
-          Register
+          Registro
         </Typography>
 
         {error && (
@@ -67,7 +67,7 @@ function Register() {
           <TextField label="Name" variant="outlined" fullWidth margin="normal" value={name} onChange={e => setName(e.target.value)} required />
           <TextField label="Email" variant="outlined" fullWidth margin="normal" value={email} onChange={e => setEmail(e.target.value)} required />
           <TextField
-            label="Password"
+            label="Contraseña"
             type={showPassword ? 'text' : 'password'}
             variant="outlined"
             fullWidth
@@ -86,7 +86,7 @@ function Register() {
             }}
           />
           <TextField
-            label="Confirm Password"
+            label="Confirmar Contraseña"
             type={showConfirmPassword ? 'text' : 'password'}
             variant="outlined"
             fullWidth
@@ -110,7 +110,7 @@ function Register() {
               <CircularProgress />
             ) : (
               <Button type="submit" variant="contained" size="large" fullWidth>
-                Register
+                Registro
               </Button>
             )}
           </Box>
@@ -118,7 +118,7 @@ function Register() {
 
         <Box sx={{ mt: 2, textAlign: 'center' }}>
           <Typography variant="body2">
-            Already have an account? <a href="/login">Login here</a>
+            Ya tienes una cuenta? <a href="/login">Inicia sesión aquí</a>
           </Typography>
         </Box>
       </Paper>

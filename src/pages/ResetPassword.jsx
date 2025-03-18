@@ -22,7 +22,7 @@ function ResetPassword() {
 
     // Check if password and confirmPassword match
     if (password !== confirmPassword) {
-      setError('Passwords do not match');
+      setError('Las contraseñas no coinciden');
       setLoading(false);
       return;
     }
@@ -30,7 +30,7 @@ function ResetPassword() {
     try {
       // Make request to reset password
       await axios.post('https://mern-stack-ecommerce-app-h5wb.onrender.com/api/auth/reset-password', { email, password });
-      setSuccess('Password successfully reset. Redirecting to login...');
+      setSuccess('Contraseña restablecida correctamente. Redireccionando al inicio de sesión...');
       setTimeout(() => navigate('/login'), 2000); // Redirect after 2 seconds
     } catch (err) {
       if (err.response?.data?.errors) {
@@ -38,7 +38,7 @@ function ResetPassword() {
         const errorMessages = err.response.data.errors.map(error => error.msg).join(', ');
         setError(errorMessages);
       } else {
-        setError(err.response?.data?.msg || 'Failed to reset password. Please try again.');
+        setError(err.response?.data?.msg || 'No se pudo restablecer la contraseña. Inténtalo de nuevo.');
       }
     } finally {
       setLoading(false);
@@ -57,7 +57,7 @@ function ResetPassword() {
     <Container maxWidth="sm" sx={{ mt: 4 }}>
       <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
         <Typography variant="h4" align="center" gutterBottom>
-          Reset Password
+          Restablecer contraseña
         </Typography>
 
         {success && (
@@ -75,7 +75,7 @@ function ResetPassword() {
         <form onSubmit={handleSubmit}>
           <TextField label="Email" variant="outlined" fullWidth margin="normal" value={email} onChange={e => setEmail(e.target.value)} required />
           <TextField
-            label="New Password"
+            label="Nueva Contraseña"
             type={showPassword ? 'text' : 'password'}
             variant="outlined"
             fullWidth
@@ -94,7 +94,7 @@ function ResetPassword() {
             }}
           />
           <TextField
-            label="Confirm New Password"
+            label="Confirmar nueva contraseña"
             type={showConfirmPassword ? 'text' : 'password'}
             variant="outlined"
             fullWidth

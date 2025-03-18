@@ -61,20 +61,29 @@ function CheckoutForm({ onSubmit }) {
   return (
     <form onSubmit={handleSubmit}>
       <Typography variant="h4" gutterBottom>
-        Billing Information
+        Información de facturación
       </Typography>
 
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <TextField required id="name" name="name" label="Full Name" fullWidth variant="standard" value={formData.name} onChange={handleInputChange} />
+          <TextField required id="name" name="name" label="Nombre completo" fullWidth variant="standard" value={formData.name} onChange={handleInputChange} />
         </Grid>
         <Grid item xs={12}>
-          <TextField required id="email" name="email" label="Email Address" fullWidth variant="standard" value={formData.email} onChange={handleInputChange} />
+          <TextField
+            required
+            id="email"
+            name="email"
+            label="Dirección de correo electrónico"
+            fullWidth
+            variant="standard"
+            value={formData.email}
+            onChange={handleInputChange}
+          />
         </Grid>
       </Grid>
 
       <Typography variant="h4" gutterBottom sx={{ mt: 4 }}>
-        Shipping Information
+        Información de envío
       </Typography>
 
       <Grid container spacing={3}>
@@ -83,7 +92,7 @@ function CheckoutForm({ onSubmit }) {
             required
             id="shippingAddress"
             name="shippingAddress"
-            label="Shipping Address"
+            label="Dirección de envío"
             fullWidth
             variant="standard"
             value={formData.shippingAddress}
@@ -93,7 +102,7 @@ function CheckoutForm({ onSubmit }) {
       </Grid>
 
       <Typography variant="h4" gutterBottom sx={{ mt: 4 }}>
-        Payment Details
+        Detalles de pago
       </Typography>
 
       <Box sx={{ mb: 2 }}>
@@ -106,7 +115,7 @@ function CheckoutForm({ onSubmit }) {
             required
             id="cardNumber"
             name="cardNumber"
-            label="Card Number"
+            label="Número de tarjeta"
             fullWidth
             variant="standard"
             value={formData.cardNumber}
@@ -119,7 +128,7 @@ function CheckoutForm({ onSubmit }) {
             required
             id="cardName"
             name="cardName"
-            label="Name on Card"
+            label="Nombre en la tarjeta"
             fullWidth
             variant="standard"
             value={formData.cardName}
@@ -132,7 +141,7 @@ function CheckoutForm({ onSubmit }) {
             required
             id="expiry"
             name="expiry"
-            label="Expiry Date"
+            label="Fecha de vencimiento"
             fullWidth
             variant="standard"
             placeholder="MM/YY or MM/YYYY"
@@ -161,7 +170,7 @@ function CheckoutForm({ onSubmit }) {
       {errorMessage && <Typography color="error">{errorMessage}</Typography>}
 
       <Button type="submit" variant="contained" color="primary" sx={{ mt: 4, mb: 4 }} disabled={loading}>
-        Place Order
+        Realizar pedido
       </Button>
     </form>
   );

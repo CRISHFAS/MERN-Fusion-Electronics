@@ -63,7 +63,7 @@ function ProductDetails({ addToCart }) {
   if (error) {
     return (
       <Typography variant="h4" align="center">
-        Error loading product details.
+        Error al cargar los detalles del producto.
       </Typography>
     );
   }
@@ -81,10 +81,10 @@ function ProductDetails({ addToCart }) {
               {product.name}
             </Typography>
             <Typography variant="h6" color="textSecondary" gutterBottom>
-              Brand: {product.brand}
+              Marca: {product.brand}
             </Typography>
             <Typography variant="h6" color="textSecondary" gutterBottom>
-              Category: {capitalizeFirstLetter(product.category)}
+              Categoria: {capitalizeFirstLetter(product.category)}
             </Typography>
             <Typography variant="h6" color="primary" gutterBottom>
               ${product.price}
@@ -95,7 +95,7 @@ function ProductDetails({ addToCart }) {
 
             <Box sx={{ display: 'flex', alignItems: 'center', my: 1 }}>
               <Typography variant="body2" color="textSecondary" sx={{ mr: 1 }}>
-                In Stock:
+                En Stock:
               </Typography>
               <Chip
                 label={product.stock > 0 ? `${product.stock} Available` : 'Out of Stock'}
@@ -112,7 +112,7 @@ function ProductDetails({ addToCart }) {
             </Box>
 
             <Button variant="contained" color="primary" onClick={handleAddToCart} sx={{ mt: 2 }}>
-              Add to Cart
+              Añadir a la cesta
             </Button>
           </Grid>
         </Grid>

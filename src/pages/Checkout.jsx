@@ -54,7 +54,7 @@ function Checkout({ cartItems }) {
     <div className="checkout-container">
       {orderCreated ? (
         <Typography variant="h4" gutterBottom>
-          Thank you for your order! You will be redirected shortly.
+          Gracias por su pedido. Será redirigido en breve.
         </Typography>
       ) : (
         <>

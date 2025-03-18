@@ -16,5 +16,5 @@ export const PaletteTree = () => (
 );
 
 export function ExampleLoaderComponent() {
-  return <Fragment>Loading...</Fragment>;
+  return <Fragment>Cargando...</Fragment>;
 }

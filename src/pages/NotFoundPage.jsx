@@ -15,14 +15,14 @@ const NotFoundPage = () => {
         404
       </Typography>
       <Typography variant="h5" gutterBottom>
-        Oops! The page you're looking for doesn't exist.
+        ¡Ups! La página que buscas no existe.
       </Typography>
       <Typography variant="body1" paragraph>
-        It looks like the page you're trying to access is not available or the URL is incorrect.
+        Parece que la página a la que intentas acceder no está disponible o la URL es incorrecta.
       </Typography>
       <Box sx={{ mt: 4 }}>
         <Button variant="contained" color="primary" size="large" onClick={handleGoHome}>
-          Go to Home
+          Ir a casa
         </Button>
       </Box>
     </Container>

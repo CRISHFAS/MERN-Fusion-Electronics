@@ -8,10 +8,10 @@ function OrderSuccess() {
       <CheckCircleOutlineIcon sx={{ fontSize: 100, color: 'green' }} />
 
       <Typography variant="h4" gutterBottom>
-        Order Successful!
+        Orden exitoso!
       </Typography>
 
-      <Typography variant="body1">Thank you for your purchase. Your order is being processed.</Typography>
+      <Typography variant="body1">Gracias por su compra. Su pedido está siendo procesado.</Typography>
     </Box>
   );
 }

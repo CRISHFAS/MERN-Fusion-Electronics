@@ -18,33 +18,34 @@ const Footer = () => {
           {/* About Section */}
           <Grid item xs={12} md={4}>
             <Typography variant="h6" sx={{ fontWeight: 600, marginBottom: '1rem' }}>
-              About Us
+              Sobre nosotros
             </Typography>
             <Typography variant="body2">
-              Explore our platform for the best deals, trending products, and a seamless shopping experience. Your satisfaction is our priority.
+              Explora nuestra plataforma para encontrar las mejores ofertas, productos de tendencia y una experiencia de compra fluida. Tu satisfacción es
+              nuestra prioridad.
             </Typography>
           </Grid>
 
           {/* Quick Links Section */}
           <Grid item xs={12} md={4}>
             <Typography variant="h6" sx={{ fontWeight: 600, marginBottom: '1rem' }}>
-              Quick Links
+              Enlaces rápidos
             </Typography>
             <Box>
               <Link href="/" color="inherit" underline="none" sx={{ display: 'block', marginBottom: '0.5rem', '&:hover': { color: '#f50057' } }}>
-                Home
+                Hogar
               </Link>
               <Link href="/shop" color="inherit" underline="none" sx={{ display: 'block', marginBottom: '0.5rem', '&:hover': { color: '#f50057' } }}>
                 Shop
               </Link>
               <Link href="/cart" color="inherit" underline="none" sx={{ display: 'block', marginBottom: '0.5rem', '&:hover': { color: '#f50057' } }}>
-                Cart
+                Carro
               </Link>
               <Link href="/login" color="inherit" underline="none" sx={{ display: 'block', marginBottom: '0.5rem', '&:hover': { color: '#f50057' } }}>
-                Login
+                Acceso
               </Link>
               <Link href="/register" color="inherit" underline="none" sx={{ display: 'block', '&:hover': { color: '#f50057' } }}>
-                Register
+                Registro
               </Link>
             </Box>
           </Grid>
@@ -52,23 +53,23 @@ const Footer = () => {
           {/* Contact Information Section */}
           <Grid item xs={12} md={4}>
             <Typography variant="h6" sx={{ fontWeight: 600, marginBottom: '1rem' }}>
-              Contact Us
+              Contacta con nosotros
             </Typography>
             <Typography variant="body2">
-              Project Maintainer:{' '}
-              <Link href="https://github.com/hoangsonww" color="inherit" sx={{ textDecoration: 'underline', '&:hover': { color: '#f50057' } }}>
-                Son Nguyen
+              Mantenedor de proyecto:{' '}
+              <Link href="https://github.com" color="inherit" sx={{ textDecoration: 'underline', '&:hover': { color: '#f50057' } }}>
+                Cristian Farias Martin
               </Link>
             </Typography>
             <Typography variant="body2">
               Email:{' '}
-              <Link href="mailto:hoangson091104@gmail.com" color="inherit" sx={{ textDecoration: 'underline', '&:hover': { color: '#f50057' } }}>
-                hoangson091104@gmail.com
+              <Link href="mailto:jerybbkuuukkrjhwioio@gmail.com" color="inherit" sx={{ textDecoration: 'underline', '&:hover': { color: '#f50057' } }}>
+                jerybbkuuukkrjhwioio@gmail.com
               </Link>
             </Typography>
             <Typography variant="body2">Phone: +1 (123) 456-7890</Typography>
             <Typography variant="body2" sx={{ marginTop: '0.5rem' }}>
-              Address: 123 Product St, Suite 500, Los Angeles, CA 90001
+              Dirección: 123 Product St, Suite 500, Posadas, CA 90001
             </Typography>
           </Grid>
         </Grid>
@@ -82,7 +83,7 @@ const Footer = () => {
             paddingTop: '1rem',
           }}
         >
-          <Typography variant="body2">© {new Date().getFullYear()} Fusion Electronics. All rights reserved.</Typography>
+          <Typography variant="body2">© {new Date().getFullYear()} Fusion Electronics. Todos los derechos reservados.</Typography>
         </Box>
       </Container>
     </Box>

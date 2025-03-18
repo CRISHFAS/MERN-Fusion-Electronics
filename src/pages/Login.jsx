@@ -26,7 +26,7 @@ function Login() {
         const errorMessages = err.response.data.errors.map(error => error.msg).join(', ');
         setError(errorMessages);
       } else {
-        setError(err.response?.data?.msg || 'Login failed');
+        setError(err.response?.data?.msg || 'Error de inicio de sesion');
       }
     } finally {
       setLoading(false);
@@ -54,7 +54,7 @@ function Login() {
         <form onSubmit={handleLogin}>
           <TextField label="Email" variant="outlined" fullWidth margin="normal" value={email} onChange={e => setEmail(e.target.value)} required />
           <TextField
-            label="Password"
+            label="Contraseña"
             type={showPassword ? 'text' : 'password'}
             variant="outlined"
             fullWidth
@@ -86,10 +86,10 @@ function Login() {
 
         <Box sx={{ mt: 2, textAlign: 'center' }}>
           <Typography variant="body2">
-            <a href="/forgot-password">Forgot password?</a>
+            <a href="/forgot-password">Has olvidado tu contraseña?</a>
           </Typography>
           <Typography variant="body2" sx={{ mt: 2 }}>
-            Don't have an account? <a href="/register">Register here</a>
+            No tienes una cuenta? <a href="/register">Regístrate aquí</a>
           </Typography>
         </Box>
       </Paper>

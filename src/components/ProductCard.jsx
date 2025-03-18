@@ -60,7 +60,7 @@ export default function ProductCard({ product, addToCart }) {
             addToCart(product);
           }}
         >
-          Add to Cart
+          Añadir al carro
         </Button>
         <Button
           size="small"
@@ -69,7 +69,7 @@ export default function ProductCard({ product, addToCart }) {
             handleViewDetails();
           }}
         >
-          View Details
+          Ver detalles
         </Button>
       </CardActions>
     </Card>

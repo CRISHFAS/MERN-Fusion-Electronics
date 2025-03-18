@@ -1,242 +1,165 @@
-# Fusion Electronics: A MERN-Stack E-commerce Application
+# Fusion Electronics: Una aplicación de comercio electrónico basada en MERN
 
-Welcome to **Fusion Electronics**, a **MERN-Stack E-commerce Application**! This project is a working demo of a full-stack web application that was built using the MERN stack (MongoDB, Express.js, React.js, Node.js). It aims to provide a comprehensive example of building a modern e-commerce platform, covering frontend user interface, backend server logic, database management, and integration with third-party libraries.
+¡Bienvenidos a **Fusion Electronics**, una **aplicación de comercio electrónico basada en MERN**! Este proyecto es una demostración funcional de una aplicación web full-stack desarrollada con la pila MERN (MongoDB, Express.js, React.js, Node.js). Su objetivo es ofrecer un ejemplo completo de cómo construir una plataforma de comercio electrónico moderna, abarcando la interfaz de usuario frontend, la lógica del servidor backend, la gestión de bases de datos y la integración con bibliotecas de terceros.
 
-## Table of Contents
+## Índice
 
-1. [Introduction](#introduction)
-2. [Live Deployment](#live-deployment)
-3. [User Interface](#user-interface)
-   - [Home Page](#home-page)
-   - [Full Product List](#full-product-list)
-   - [Cart Page](#cart-page)
-   - [Checkout Page](#checkout-page)
-4. [Features](#features)
-5. [Technologies Used](#technologies-used)
-6. [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-7. [Project Structure](#project-structure)
-8. [Running the Application](#running-the-application)
-9. [Testing the APIs](#testing-the-apis)
-10. [Swagger API Documentation](#swagger-api-documentation)
-11. [OpenAPI Specification](#openapi-specification)
-    - [Using the `openapi.yaml` File](#using-the-openapiyaml-file)
-12. [Deployment](#deployment)
-13. [Containerization](#containerization)
-14. [Contributing](#contributing)
-15. [License](#license)
-16. [Creator](#creator)
+1. [Introducción](#introducción)
+2. [Implementación en vivo](#implementación-en-vivo)
+3. [Características](#características)
+4. [Tecnologías utilizadas](#tecnologías-utilizadas)
+5. [Estructura del proyecto](#estructura-del-proyecto)
+6. [Ejecución de la aplicación](#ejecución-de-la-aplicación)
+7. [Pruebas de APIs](#probando-las-apis)
+8. [Documentación de la API de Swagger](#documentación-de-la-api-de-swagger)
+9. [Especificación de OpenAPI](#especificación-de-openapi)
 
-## Introduction
+- [Uso del archivo `openapi.yaml`](#usando-el-archivo-openapiyaml)
 
-This project is a demonstration of building an e-commerce application using the MERN stack, which consists of MongoDB (database), Express.js (server), React.js (frontend), and Node.js (runtime environment). The application allows users to browse products, add them to a shopping cart, proceed to checkout, and simulate the order processing. It includes basic validations for user inputs and simulates the checkout process on the backend.
+10. [Implementación](#implementación)
+11. [Contenedorización](#contenedorización)
+12. [Contribución](#contribución)
+13. [Licencia](#licencia)
 
-## Live Deployment
+## Introducción
 
-The application is deployed live on Vercel. You can access it at the following URL: [Fusion Electronics](https://fusion-ecommerce-app.vercel.app).
+Este proyecto es una demostración de la creación de una aplicación de comercio electrónico utilizando la pila MERN, compuesta por MongoDB (base de datos), Express.js (servidor), React.js (frontend) y Node.js (entorno de ejecución). La aplicación permite a los usuarios explorar productos, añadirlos al carrito de compra, finalizar la compra y simular el procesamiento del pedido. Incluye validaciones básicas para las entradas del usuario y simula el proceso de pago en el backend.
 
-The backend server is deployed on Render and can be accessed at the following URL: [Fusion Electronics API](https://mern-stack-ecommerce-app-h5wb.onrender.com/).
+## Implementación en vivo
 
-> **Note**: The backend server may take a few seconds to wake up if it has been inactive for a while. For your information, it is hosted on the free tier of Render, with 0.1 CPU and 512 MB of memory only, so it may take a bit longer to respond to requests, especially after periods of inactivity.
+La aplicación está implementada en vivo en Vercel. Puede acceder a ella en la siguiente URL: [Fusion Electronics](https://fusion-ecommerce-app.vercel.app).
 
-## User Interface
+El servidor backend está implementado en Render y se puede acceder a él en la siguiente URL: [API de Fusion Electronics](https://mern-stack-ecommerce-app-h5wb.onrender.com/).
 
-### Home Page
+> **Nota**: El servidor backend puede tardar unos segundos en reactivarse si ha estado inactivo durante un tiempo. Para su información, está alojado en la versión gratuita de Render, con solo 0.1 CPU y 512 MB de memoria, por lo que puede tardar un poco más en responder a las solicitudes, especialmente después de periodos de inactividad.
 
-<p align="center">
-    <img src="docs/home-ui.png" alt="Fusion Electronics Homepage" style="border-radius: 10px" width="100%"/>
-</p>
+## Características
 
-### Full Product List
+- **Gestión de productos:**
 
-<p align="center">
-    <img src="docs/products-ui.png" alt="Fusion Electronics Products List" style="border-radius: 10px" width="100%"/>
-</p>
+- Ver la lista de productos.
+- Ver información detallada del producto.
+- Añadir productos al carrito de compras.
 
-### Search Results
+- **Carrito de compras:**
 
-<p align="center">
-    <img src="docs/search-results-ui.png" alt="Fusion Electronics Search Results" style="border-radius: 10px" width="100%"/>
-</p>
+- Ver artículos en el carrito de compras.
+- Eliminar artículos del carrito.
+- Calcular la cantidad total de artículos en el carrito.
 
-### Product Details Page
+- **Proceso de pago:**
+- Introducir información de facturación, envío y pago.
+- Simular el proceso de creación de pedidos en el backend.
+- Recibir confirmación de pedidos completados correctamente.
 
-<p align="center">
-    <img src="docs/product-details-ui.png" alt="Fusion Electronics Product Details Page" style="border-radius: 10px" width="100%"/>
-</p>
-
-### Cart Page
-
-<p align="center">
-    <img src="docs/cart-ui.png" alt="Fusion Electronics Cart Page" style="border-radius: 10px" width="100%"/>
-</p>
-
-### Checkout Page
-
-<p align="center">
-    <img src="docs/checkout-ui.png" alt="Fusion Electronics Checkout Page" style="border-radius: 10px" width="100%"/>
-</p>
-
-### Login Page
-
-<p align="center">
-    <img src="docs/login-ui.png" alt="Fusion Electronics Login Page" style="border-radius: 10px" width="100%"/>
-</p>
-
-### Register Page
-
-<p align="center">
-    <img src="docs/register-ui.png" alt="Fusion Electronics Register Page" style="border-radius: 10px" width="100%"/>
-</p>
-
-### Forgot Password Page
-
-<p align="center">
-    <img src="docs/forgot-password-ui.png" alt="Fusion Electronics Forgot Password Page" style="border-radius: 10px" width="100%"/>
-</p>
-
-### Reset Password Page
-
-<p align="center">
-    <img src="docs/reset-password-ui.png" alt="Fusion Electronics Reset Password Page" style="border-radius: 10px" width="100%"/>
-</p>
-
-### Order Confirmation
-
-<p align="center">
-    <img src="docs/order-ui.png" alt="Fusion Electronics Order Success Page" style="border-radius: 10px" width="100%"/>
-</p>
-
-### Footer
-
-<p align="center">
-    <img src="docs/footer.png" alt="Fusion Electronics Footer" style="border-radius: 10px" width="100%"/>
-</p>
-
-## Features
-
-- **Product Management:**
-    - View a list of products.
-    - View detailed product information.
-    - Add products to the shopping cart.
-
-- **Shopping Cart:**
-    - View items in the shopping cart.
-    - Remove items from the cart.
-    - Calculate total amount of items in the cart.
-
-- **Checkout Process:**
-    - Enter billing, shipping, and payment information.
-    - Simulate the order creation process on the backend.
-    - Receive confirmation of order success.
-
-## Technologies Used
+## Tecnologías utilizadas
 
 - **Frontend:**
-    - React.js
-    - Material-UI for styling
-    - Axios for API requests
-    - `react-credit-cards-2` for credit card visualization
-    - `react-router-dom` for routing
-    - `react-hook-form` for form validation
-    - `react-toastify` for toast notifications
-    - Jest and React Testing Library for testing
+
+  - React.js
+  - Material-UI para el estilo
+  - Axios para las solicitudes de API
+  - `react-credit-cards-2` para la visualización de tarjetas de crédito
+  - `react-router-dom` para el enrutamiento
+  - `react-hook-form` para la validación de formularios
+  - `react-toastify` para las notificaciones de notificaciones
+  - Biblioteca de pruebas de Jest y React para pruebas
 
 - **Backend:**
-    - Node.js
-    - Express.js
-    - MongoDB (with Mongoose ODM)
-    - Axios for external API requests
-    - JsonWebToken for user authentication
-    - Bcrypt for password hashing
-    - Dotenv for environment variables
-    - Cors for cross-origin resource sharing
-    - Swagger for API documentation
-    - Nodemon for server hot-reloading
-    - **Middleware**: JWT for securing API endpoints
 
-- **Development Tools:**
-    - Jetbrains WebStorm (IDE)
-    - Postman (for API testing)
-    - Git (version control)
-    - npm (package manager)
+  - Node.js
+  - Express.js
+  - MongoDB (con Mongoose ODM)
+  - Axios para solicitudes API externas
+  - JsonWebToken para autenticación de usuarios
+  - Bcrypt para hash de contraseñas
+  - Dotenv para variables de entorno
+  - Cors para compartir recursos entre orígenes
+  - Swagger para documentación de API
+  - Nodemon para recarga en caliente del servidor
+  - **Middleware**: JWT para proteger los endpoints de API
 
-## Project Structure
+- **Herramientas de desarrollo:**
+  - Jetbrains WebStorm (IDE)
+  - Postman (para pruebas de API)
+  - Git (control de versiones)
+  - npm (gestor de paquetes)
 
-The project is organized into two main "stacks": The backend is in the `backend` directory that hosts all product & order data and the frontend is in the `root` directory. Here is an overview of the project structure:
+## Estructura del Proyecto
+
+El proyecto se organiza en dos pilas principales: el backend se encuentra en el directorio `backend`, que alberga todos los datos de productos y pedidos, y el frontend se encuentra en el directorio `root`. A continuación, se presenta un resumen de la estructura del proyecto:
 
 ```
 fullstack-ecommerce/
-├── backend/                       # Node.js server files
-│   ├── config/                    # Configuration files
-│   │   └── db.js                  # Database connection
-│   ├── models/                    # Mongoose models
-│   │   └── product.js             # Product schema
-│   ├── routes/                    # Route handlers
-│   │   ├── products.js            # Product routes
-│   │   ├── search.js              # Search routes
-│   │   └── checkout.js            # Checkout routes
-│   ├── seed/                      # Database seed data
-│   │   └── products.js            # Product seed data
-│   ├── .env                       # Environment variables
-│   └── index.js                   # Server entry point
-├── public/                        # Frontend public assets
-│   ├── index.html                 # HTML template
-│   ├── manifest.json              # Web app manifest
-│   └── favicon.ico                # Favicon
-├── src/                           # React.js frontend files
-│   ├── components/                # Reusable components
-│   │   ├── CheckoutForm.jsx       # Checkout form component
-│   │   ├── ProductCard.jsx        # Product card component
-│   │   ├── NavigationBar.jsx      # Navigation bar component
-│   │   ├── OrderConfirmation.jsx  # Order confirmation component
-│   │   ├── ProductListing.jsx     # Product listing component
-│   │   ├── SearchResults.jsx      # Search results component
-│   │   └── ShoppingCart.jsx       # Shopping cart component
-│   ├── dev/                       # Development utilities
-│   │   ├── index.js               # Development entry point
-│   │   ├── palette.jsx            # Color palette
-│   │   ├── preview.jsx            # Component preview
-│   │   └── useInitials.js         # Initials hook
-│   ├── pages/                     # Page components
-│   │   ├── Cart.jsx               # Cart page component
-│   │   ├── Checkout.jsx           # Checkout page component
-│   │   ├── Home.jsx               # Home page component
-│   │   ├── ProductDetails.jsx     # Product details page component
-│   │   ├── OrderSuccess.jsx       # Order success page component
-│   │   ├── ProductDetails.jsx     # Product details page component
-│   │   └── Shop.jsx               # Shop page component
-│   ├── App.jsx                    # Main application component
-│   ├── App.css                    # Main application styles
-│   └── index.js                   # React entry point
-├── build/                         # Frontend production build files
-├── tests/                         # Test files
-├── .gitignore                     # Git ignore file
-├── package.json                   # NPM package file
-├── jsconfig.json                  # JS config file
-└── setupProxy.js                  # Proxy configuration
+├── backend/ # Archivos del servidor Node.js
+│ ├── config/ # Archivos de configuración
+│ │ └── db.js # Conexión a la base de datos
+│ ├── models/ # Modelos de Mongoose
+│ │ └── product.js # Esquema del producto
+│ ├── route/ # Controladores de ruta
+│ │ ├── products.js # Rutas del producto
+│ │ ├── search.js # Rutas de búsqueda
+│ │ └── checkout.js # Rutas de pago
+│ ├── seed/ # Semilla de la base de datos datos
+│ │ └── products.js # Datos de la semilla del producto
+│ ├── .env # Variables de entorno
+│ └── index.js # Punto de entrada del servidor
+├── public/                        # Recursos públicos del frontend
+│ ├── index.html # Plantilla HTML
+│ ├── manifest.json # Manifiesto de la aplicación web
+│ └── favicon.ico # Favicon
+├── src/ # Archivos del frontend de React.js
+│ ├── component/ # Componentes reutilizables
+│ │ ├── CheckoutForm.jsx # Componente del formulario de pago
+│ │ ├── ProductCard.jsx # Componente de la tarjeta de producto
+│ │ ├── NavigationBar.jsx # Componente de la barra de navegación
+│ │ ├── OrderConfirmation.jsx # Componente de confirmación de pedido
+│ │ ├── ProductListing.jsx # Componente de listado de productos
+│ │ ├── SearchResults.jsx # Componente de resultados de búsqueda
+│ │ └── ShoppingCart.jsx # Componente de carrito de compras
+│ ├── dev/                       # Utilidades de desarrollo
+│ │ ├── index.js # Punto de entrada para el desarrollo
+│ │ ├── palette.jsx # Paleta de colores
+│ │ ├── preview.jsx # Vista previa del componente
+│ │ └── useInitials.js # Gancho de iniciales
+│ ├── pages/ # Componentes de página
+│ │ ├── Cart.jsx # Componente de la página del carrito
+│ │ ├── Checkout.jsx # Componente de la página de pago
+│ │ ├── Home.jsx # Componente de la página de inicio
+│ │ ├── ProductDetails.jsx # Detalles del producto Componente de página
+│ │ ├── OrderSuccess.jsx # Componente de página de pedido exitoso
+│ │ ├── ProductDetails.jsx # Componente de la página de detalles del producto
+│ │ └── Shop.jsx # Componente de la página de la tienda
+│ ├── App.jsx # Componente principal de la aplicación
+│ ├── App.css # Estilos principales de la aplicación
+│ └── index.js # Punto de entrada de React
+├── build/ # Archivos de compilación de producción del frontend
+├── tests/ # Archivos de prueba
+├── .gitignore # Archivo de ignorados de Git
+├── package.json # Archivo de paquete NPM
+├── jsconfig.json # Archivo de configuración de JS
+└── setupProxy.js # Configuración del proxy
 ```
 
-## Getting Started
+### Requisitos previos
 
-### Prerequisites
+Antes de ejecutar este proyecto, asegúrese de tener instalado lo siguiente:
 
-Before running this project, ensure you have the following installed:
-
-- Node.js (with npm)
-- MongoDB (with either local or remote instance)
+- Node.js (con npm)
+- MongoDB (con instancia local o remota)
 - Git
 
-### Installation
+### Instalación
 
-1. Clone the repository:
+1. Clonar el repositorio:
+
    ```bash
    git clone https://github.com/hoangsonww/MERN-Stack-Ecommerce-App.git
-   cd MERN-Stack-Ecommerce-App  # Fix the path if necessary
+   cd MERN-Stack-Ecommerce-App  # Arregla la ruta si es necesario
    ```
 
-2. Install project dependencies:
+2. Instalar las dependencias del proyecto:
+
    ```bash
    # Install server (backend) dependencies
    cd backend
@@ -246,105 +169,107 @@ Before running this project, ensure you have the following installed:
    cd ..
    npm install
    ```
-   
-3. Set up the backend:
 
-   - Create a `.env` file in the `backend/` directory and add the following environment variable (replace the URI with your MongoDB connection string):
+3. Configurar el backend:
+
+   - Cree un archivo `.env` en el directorio `backend/` y agregue la siguiente variable de entorno (reemplace la URI con su cadena de conexión MongoDB):
+
      ```
      MONGO_URI=mongodb://localhost:27017/Ecommerce-Products
      JWT_SECRET=your_secret_key
      ```
-     
-     For your information, I am using MongoDB Atlas for this project. You can create a free account and get your connection string from there if you want to deploy the application to the cloud.
- 
-    - Ensure that your MongoDB server is running. If you're using Mac, you can start the MongoDB server with the following command:
-     ```bash
-     brew services start mongodb-community
-     ``` 
 
-   - Seed the database with sample data:
+   Para tu información, estoy usando MongoDB Atlas para este proyecto. Puedes crear una cuenta gratuita y obtener tu cadena de conexión desde allí si quieres implementar la aplicación en la nube.
+
+   - Asegúrese de que su servidor MongoDB esté en ejecución. Si usa Mac, puede iniciar el servidor MongoDB con el siguiente comando:
+
+   ```bash
+   brew services start mongodb-community
+   ```
+
+   - Sembrar la base de datos con datos de muestra:
      ```bash
      cd backend/seed
      node productSeeds.js dev
      ```
-     
-   - Run the backend server: (first `cd` into the backend directory)
+   - Ejecute el servidor backend: (primero `cd` en el directorio backend)
      ```bash
      cd ..
      npm start
-     ``` 
-     
-4. Set up the frontend:
-   - First, `cd` into the `root` directory if you are not already there:
+     ```
+
+4. Configura la interfaz:
+   - Primero, `cd` en el directorio `root` si aún no estás allí:
      ```bash
      cd ..
      ```
-     Or
-        ```bash
-        cd fullstack-ecommerce
-        ```
-   - Start the frontend development server:
+     O
+     ```bash
+     cd fullstack-ecommerce
+     ```
+   - Iniciar el servidor de desarrollo frontend:
      ```bash
      npm start
      ```
-   - **Note:** The frontend server will run on `http://localhost:3000` by default. If you encounter any errors when starting related to the `react-credit-cards-2` package, it is OK to just ignore them as the application will still run correctly.
+     **Nota:** El servidor frontend se ejecutará en `http://localhost:3000` por defecto. Si encuentra algún error relacionado con el paquete `react-credit-cards-2` al iniciar, puede ignorarlo, ya que la aplicación seguirá funcionando correctamente.
 
-## Running the Application
+## Ejecución de la aplicación
 
-- Open your browser and navigate to `http://localhost:3000` to view the application.
+- Abra su navegador y navegue a `http://localhost:3000` para ver la aplicación.
 
-## Testing the APIs
+## Prueba de las API
 
-- Simply open your browser and navigate to `http://localhost:5000/api/products` to view the list of products.
-- You can also change the sample data by navigating to `backend/seed/productSeeds.js` and modifying the data there.
+- Simplemente abra su navegador y navegue a `http://localhost:5000/api/products` para ver la lista de productos.
+- También puede cambiar los datos de muestra navegando a `backend/seed/productSeeds.js` y modificando los datos allí.
 
-## Swagger API Documentation
+## Documentación de la API de Swagger
 
-- The backend server includes Swagger API documentation that can be accessed at `http://localhost:5000/api-docs`.
-- Before accessing the above URL, ensure that the backend server is running.
-- The Swagger UI provides a detailed overview of the API endpoints, request/response schemas, and example requests.
-- If you have everything set up correctly, you should see the Swagger UI documentation page:
+- El servidor backend incluye la documentación de la API de Swagger, accesible en `http://localhost:5000/api-docs`.
+- Antes de acceder a la URL anterior, asegúrese de que el servidor backend esté en ejecución.
+- La interfaz de usuario de Swagger ofrece una descripción detallada de los puntos finales de la API, los esquemas de solicitud/respuesta y ejemplos de solicitudes.
+- Si todo está configurado correctamente, debería consultar la página de documentación de la interfaz de usuario de Swagger:
 
-<p align="center">
-    <img src="docs/swagger-ui.png" alt="The MovieVerse App Interface" style="border-radius: 10px" width="100%"/>
-</p>
+## Especificación de OpenAPI
 
-## OpenAPI Specification
+### Uso del archivo `openapi.yaml`
 
-### Using the `openapi.yaml` File
+1. **Consultar la documentación de la API**
 
-1. **View the API Documentation**
-- Open [Swagger Editor](https://editor.swagger.io/).
-- Upload the `openapi.yaml` file or paste its content.
-- Visualize and interact with the API documentation.
+- Abre el [Editor Swagger](https://editor.swagger.io/).
+- Sube el archivo `openapi.yaml` o pega su contenido.
+- Visualiza e interactúa con la documentación de la API.
 
-2. **Test the API**
-- Import `openapi.yaml` into [Postman](https://www.postman.com/):
-  - Open Postman → Import → Select `openapi.yaml`.
-  - Test the API endpoints directly from Postman.
-- Or use [Swagger UI](https://swagger.io/tools/swagger-ui/):
-  - Provide the file URL or upload it to view and test endpoints.
+2. **Prueba la API**
 
-3. **Generate Client Libraries**
-- Install OpenAPI Generator:
+- Importa `openapi.yaml` en [Postman](https://www.postman.com/):
+- Abre Postman → Importar → Selecciona `openapi.yaml`.
+- Prueba los endpoints de la API directamente desde Postman.
+- O usa [Swagger UI](https://swagger.io/tools/swagger-ui/):
+- Proporciona la URL del archivo o súbelo para ver y probar los endpoints.
+
+3. **Generar bibliotecas de cliente**
+
+- Instalar el generador OpenAPI:
   ```bash
   npm install @openapitools/openapi-generator-cli -g
   ```
-- Generate a client library:
+- Generar una biblioteca de cliente:
   ```bash
   openapi-generator-cli generate -i openapi.yaml -g <language> -o ./client
   ```
-- Replace `<language>` with the desired programming language.
+- Reemplace `<language>` con el lenguaje de programación deseado.
 
-4. **Generate Server Stubs**
-- Generate a server stub:
+4. **Generar stubs de servidor**
+
+- Generar un stub de servidor:
   ```bash
   openapi-generator-cli generate -i openapi.yaml -g <framework> -o ./server
   ```
-- Replace `<framework>` with the desired framework.
+- Reemplace `<framework>` con el marco deseado.
 
-5. **Run a Mock Server**
-- Install Prism:
+5. **Ejecutar un servidor simulado**
+
+- Instalar Prism:
   ```bash
   npm install -g @stoplight/prism-cli
   ```
@@ -353,46 +278,43 @@ Before running this project, ensure you have the following installed:
   prism mock openapi.yaml
   ```
 
-6. **Validate the OpenAPI File**
+6. **Validar el archivo OpenAPI**
+
 - Use [Swagger Validator](https://validator.swagger.io/):
-  - Upload `openapi.yaml` or paste its content to check for errors.
+  - Cargue `openapi.yaml` o pegue su contenido para verificar si hay errores.
 
-This guide enables you to view, test, and utilize the API. You can generate client libraries, server stubs, and run a mock server using the OpenAPI Specification.
+Esta guía le permite ver, probar y utilizar la API. Puede generar bibliotecas de cliente, stubs de servidor y ejecutar un servidor simulado utilizando la especificación OpenAPI.
 
-## Deployment
+## Implementación
 
-To deploy the application:
+Para implementar la aplicación:
 
-- Configure deployment settings for both frontend (React) and backend (Node.js) according to your chosen hosting provider (e.g., AWS, Heroku, Netlify).
+- Configure los ajustes de implementación tanto para el frontend (React) como para el backend (Node.js) según el proveedor de alojamiento elegido (por ejemplo, AWS, Heroku, Netlify).
 
-## Containerization
+## Contenedorización
 
-This project can be containerized using Docker. First, ensure that Docker Desktop is running on your system. Then, to create a Docker image, run the following command:
+Este proyecto se puede contenerizar con Docker. Primero, asegúrese de que Docker Desktop esté ejecutándose en su sistema. Luego, para crear una imagen de Docker, ejecute el siguiente comando:
+
 ```bash
 docker compose up --build
 ```
 
-This command will create a Docker image for the frontend and backend, and run the application in a containerized environment.
+Este comando creará una imagen de Docker para el frontend y el backend, y ejecutará la aplicación en un entorno en contenedores.
 
-## Contributing
+## Contribuciones
 
-Contributions to this project are welcome! Here are some ways you can contribute:
+¡Agradecemos tus contribuciones a este proyecto! Aquí tienes algunas maneras de contribuir:
 
-- Report bugs and request features by opening issues.
-- Implement new features or enhancements and submit pull requests.
-- Improve documentation and README files.
+- Reportar errores y solicitar mejoras abriendo incidencias.
+- Implementar nuevas funciones o mejoras y enviar solicitudes de incorporación de cambios.
+- Mejorar la documentación y los archivos README.
 
 ## License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-## Creator
-
-- **Son Nguyen** - [hoangsonww](https://github.com/hoangsonww)
-- **Email:** [hoangson091104@gmail.com](mailto:hoangson091104@gmail.com).
+Este proyecto está licenciado bajo la **Licencia MIT** - consulte el archivo [LICENCIA](LICENCIA) para obtener más detalles.
 
 ---
 
-Thank you for exploring **Fusion Electronics - a MERN Stack E-commerce Application**! If you have any questions or feedback, feel free to reach out or open an issue.
+Gracias por explorar **Fusion Electronics, una aplicación de comercio electrónico de MERN Stack**. Si tiene alguna pregunta o comentario, no dude en contactarnos o abrir un problema.
 
 **Happy coding! 🚀**

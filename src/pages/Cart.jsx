@@ -24,11 +24,11 @@ function Cart({ cart, setCart }) {
   return (
     <div>
       <Typography variant="h4" sx={{ my: 2 }}>
-        Shopping Cart
+        Carro de compra
       </Typography>
 
       {cart.length === 0 ? (
-        <Typography variant="body1">Your cart is empty.</Typography>
+        <Typography variant="body1">Su carrito está vacío.</Typography>
       ) : (
         <>
           <List>
@@ -37,7 +37,7 @@ function Cart({ cart, setCart }) {
                 <ListItem
                   secondaryAction={
                     <Button onClick={() => removeFromCart(item.id)} startIcon={<DeleteIcon />} color="error">
-                      Remove
+                      Eliminar
                     </Button>
                   }
                 >
@@ -56,7 +56,7 @@ function Cart({ cart, setCart }) {
           </Typography>
 
           <Button variant="contained" onClick={handleCheckout} sx={{ mt: 2 }}>
-            Proceed to Checkout
+            Pasar por la caja
           </Button>
         </>
       )}

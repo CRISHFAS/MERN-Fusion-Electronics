@@ -39,18 +39,18 @@ function Home({ products, addToCart, error, loading }) {
   const bannerImages = [
     {
       url: summerSaleImage,
-      title: 'Summer Sale - Up to 50% Off',
-      description: 'Shop now for the best deals on summer essentials!',
+      title: 'Rebajas de verano: hasta un 50 % de descuento',
+      description: 'Compra ahora las mejores ofertas en artículos esenciales de verano!',
     },
     {
       url: techGadgetsImage,
-      title: 'New Tech Gadgets',
-      description: 'Explore the latest in tech and gadgets.',
+      title: 'Nuevos dispositivos tecnológicos',
+      description: 'Explora lo último en tecnología y gadgets.',
     },
     {
       url: trendingFashionImage,
-      title: 'Trending Fashion',
-      description: 'Discover the newest fashion trends for this season.',
+      title: 'Moda de tendencia',
+      description: 'Descubre las nuevas tendencias de moda para esta temporada.',
     },
   ];
 
@@ -116,7 +116,7 @@ function Home({ products, addToCart, error, loading }) {
       {/* Featured Products Section */}
       <Container maxWidth="lg">
         <Typography variant="h4" align="center" sx={{ my: 4, color: 'black', fontWeight: 700 }}>
-          Featured Products
+          Productos destacados
         </Typography>
         {error ? (
           <Alert severity="error">{error.message}</Alert>
@@ -138,7 +138,7 @@ function Home({ products, addToCart, error, loading }) {
       {/* Call to Action */}
       <Box sx={{ textAlign: 'center', mt: 5 }}>
         <Button variant="contained" size="large" href="/shop">
-          Shop Now
+          Compra ahora
         </Button>
       </Box>
     </Box>

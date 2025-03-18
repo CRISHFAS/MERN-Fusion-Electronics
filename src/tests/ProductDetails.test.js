@@ -73,16 +73,22 @@ describe('ProductDetails Component', () => {
       // Check for the product name
       expect(screen.getByText(/Sample Product/i)).toBeInTheDocument();
       // Check for the brand
+      // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
       expect(screen.getByText(/Brand: Brand A/i)).toBeInTheDocument();
       // Check for the category
+      // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
       expect(screen.getByText(/Category: Category A/i)).toBeInTheDocument();
       // Check for the price
+      // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
       expect(screen.getByText(/\$100/i)).toBeInTheDocument();
       // Check for the description
+      // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
       expect(screen.getByText(/This is a sample product description./i)).toBeInTheDocument();
       // Check for the stock message
+      // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
       expect(screen.getByText(/10 Available/i)).toBeInTheDocument();
       // Check for the rating and number of reviews
+      // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
       expect(screen.getByText(/\(5 Reviews\)/i)).toBeInTheDocument();
     });
   });
@@ -98,6 +104,7 @@ describe('ProductDetails Component', () => {
 
     await waitFor(() => {
       const addToCartButton = screen.getByRole('button', { name: /Add to Cart/i });
+      // eslint-disable-next-line testing-library/no-wait-for-side-effects
       fireEvent.click(addToCartButton);
       expect(mockAddToCart).toHaveBeenCalledWith(sampleProduct);
     });
