@@ -64,7 +64,7 @@ const productSeeds = [
     description: 'Powerful laptop with stunning 4K display.',
     price: 1799,
     category: 'computers',
-    image: 'https://minhvu.vn/thumb/dellxps/dellxps159530/dellxps159530cbfbjco_480_360.jpg',
+    image: '/images/dell-xps-15.jpg?timestamp=20250406',
     brand: 'Dell',
     stock: 20,
   },
@@ -100,8 +100,7 @@ const productSeeds = [
     description: 'Sleek and powerful laptop from Microsoft.',
     price: 1299,
     category: 'computers',
-    image:
-      'https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4LiXm?ver=45be&q=90&m=6&h=705&w=1253&b=%23FFFFFFFF&f=jpg&o=f&p=140&aim=true',
+    image: '/images/microsoftsurfacelaptop4.jpg',
     brand: 'Microsoft',
     stock: 25,
   },
